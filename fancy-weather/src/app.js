@@ -1,0 +1,15 @@
+import './scss/base.scss';
+import './js/getIP';
+import './js/getImage';
+import './js/generateHTML';
+import './js/generateWeatherNow';
+import './js/generateWeatherImg';
+import './js/weather3Days';
+import './js/generateMap';
+import './js/search';
+import './js/buttonFahrenheit';
+import './js/buttonCelsius';
+import './js/buttonChangeBackground';
+import './js/refreshTime';
+import './js/translate';
+import './js/speech';
