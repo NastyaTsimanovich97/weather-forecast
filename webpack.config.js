@@ -1,5 +1,6 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const NetlifyServerPushPlugin = require("netlify-push-webpack-plugin");
 
 module.exports = {
   entry: './fancy-weather/src/app.js',
@@ -30,6 +31,17 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('style.css')
+    new ExtractTextPlugin('style.css'),
+    new HtmlWebpackPlugin(),
+    new NetlifyServerPushPlugin({
+      filename: "_headers",
+      headers: [
+        "  X-Frame-Options: DENY",
+        "  Referrer-Policy: strict-origin-when-cross-origin",
+        "/assets/*",
+        "  Cache-Control: public, max-age:360000"
+      ],
+      include: "css"
+    })
   ]
 };

@@ -33,6 +33,7 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
-    "mapbox-gl": "^1.6.0"
+    "mapbox-gl": "^1.6.0",
+    "netlify-push-webpack-plugin": "^1.1.0"
   }
 }
