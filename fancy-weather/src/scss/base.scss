@@ -359,10 +359,19 @@ html{
   height: 4.3vw;
   width: 3.5vw;
   background-color: rgba($color: #2f2f2f, $alpha: 0.5);
+  @media (max-width: $breakpoint-tablet) {
+    width: 7vw;
+    height: 7vw;
+  }
 }
 .search-city__icon{
   width: 3vw;
   padding-top: 0.5vw;
+  @media (max-width: $breakpoint-tablet) {
+    width: 5vw;
+    padding-top: 1vw;
+    padding-left: 1vw;
+  }
 }
 .zoom-in,
 .zoom-out,
