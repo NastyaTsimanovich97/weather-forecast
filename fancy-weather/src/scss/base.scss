@@ -1,5 +1,6 @@
 $font: 'Noto Sans JP', Arial, sans-serif;
 $colorBtn: rgba($color: #2f2f2f, $alpha: 0.35);
+$colorBtnHover: rgba($color: #656565, $alpha: 0.35);
 $breakpoint-tablet: 800px;
 
 * {
@@ -57,10 +58,16 @@ html{
   &:hover {
     transform: scale(0.9);
   }
+  &:active {
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
   @media (max-width: $breakpoint-tablet) {
     width: 7vw;
     height: 7vw;
-    font-size: 2.8vw;
+    font-size: 3.2vw;
   }
 }
 .button-languages{
@@ -69,6 +76,10 @@ html{
   -ms-appearance: none;
   appearance: none;
   padding-left: 4%;
+  @media (max-width: $breakpoint-tablet) {
+    padding-left: 5%;
+    padding-bottom: 2.5%;
+  }
 }
 .button-languages__option{
   width: 4.3vw;
@@ -108,6 +119,12 @@ html{
   font-size: 2vw;
   color: rgba($color: #ffffff, $alpha: 1.0);
   font-family: $font;
+  &:active {
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
   @media (max-width: $breakpoint-tablet) {
     width: 40vw;
     height: 7vw;
@@ -134,7 +151,20 @@ html{
   font-size: 2vw;
   color: rgba($color: #ffffff, $alpha: 0.7);
   font-family: $font;
-  text-align: center;
+  box-shadow: 0px 4px 10px 2px rgba(black, 0.2);
+  cursor: pointer;
+  transition: box-shadow 1s ease, color 1s ease;
+  
+  &:active {
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    box-shadow: inset 0 0 0 2em $colorBtnHover;
+    color: whitesmoke;
+  }
   @media (max-width: $breakpoint-tablet) {
     width: 12vw;
     height: 7vw;
@@ -377,4 +407,19 @@ html{
 .zoom-out,
 .compass{
   width: 20px;
+}
+.active-button {
+  transform: scale(0.9);
+  background-color: $colorBtnHover;
+}
+.tooltip {
+  position: fixed;
+  padding: 10px 20px;
+  border: 1px solid rgba(160, 220, 233, 0.959);
+  border-radius: 4px;
+  text-align: center;
+  font: italic 14px/1.3 $font;
+  color: rgba($color: #ffffff, $alpha: 1.0);;
+  background: $colorBtn;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
 }

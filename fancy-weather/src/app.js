@@ -13,3 +13,4 @@ import './js/buttonChangeBackground';
 import './js/refreshTime';
 import './js/translate';
 import './js/speech';
+import './js/toolTip';
