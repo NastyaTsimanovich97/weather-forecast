@@ -50,6 +50,13 @@ const buttonCelsius = createHtmlElement('button', 'button-celsius', containerBut
 const imgCelsius = createHtmlElement('img', 'img-celsius', buttonCelsius);
 imgCelsius.setAttribute('src', '../fancy-weather/src/img/celsius.svg');
 
+if (findLocalStorage('degreesSystem', 'C') === 'C') {
+  buttonCelsius.classList.add('active-button');
+}
+if (findLocalStorage('degreesSystem', 'C') === 'F') {
+  buttonFahrenheit.classList.add('active-button');
+}
+
 const searchContainer = createHtmlElement('div', 'search-city__container', container);
 
 export function createSearchHTML() {
@@ -71,6 +78,15 @@ export function createSearchHTML() {
   const searchIconContainer = createHtmlElement('div', 'search-city__icon-container', searchContainer);
   const searchIcon = createHtmlElement('img', 'search-city__icon', searchIconContainer);
   searchIcon.setAttribute('src', '../fancy-weather/src/img/microphone.svg');
+  if (findLocalStorage('weatherLang', 'en') === 'ru') {
+    searchIcon.setAttribute('data-tooltip', 'нажмите для голосового поиска');
+  }
+  if (findLocalStorage('weatherLang', 'en') === 'en') {
+    searchIcon.setAttribute('data-tooltip', 'click to search by voice');
+  }
+  if (findLocalStorage('weatherLang', 'en') === 'be') {
+    searchIcon.setAttribute('data-tooltip', 'клікніце для галасавога пошуку');
+  }
 
   const searchButton = createHtmlElement('button', 'search-city__button', searchContainer);
   if (findLocalStorage('weatherLang', 'en') === 'ru') {
